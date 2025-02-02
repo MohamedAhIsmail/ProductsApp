@@ -1,0 +1,45 @@
+<div class="cart">
+  <div class="container">
+  @if(counter === 0) {
+    <h3>Cart is Empty!</h3>
+  }@else {
+    <h2>Your Cart</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Remove</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of cartItems; track $index) {
+          <tr>
+            <td>
+              <div class="product">
+                <img [src]="item.images" alt="">
+                <div class="title fw-bold">{{item.title}}</div>
+              </div>
+            </td>
+            <td>
+              <div class="quantity">
+                <button class="plus fw-bold" (click)="plusQuantity(item)">+</button>
+                <div class="number p-1">{{item.counter}}</div>
+                <button class="negative fw-bold" (click)="negativeQuantity(item)">-</button>
+              </div>
+            </td>
+            <td>
+              <button class="delete" (click)="deleteItem(item)"><i class="fa-solid fa-trash-can"></i></button>
+            </td>
+            <td>
+              <div class="price fw-bold">{{item.price * item.counter| currency:'USD': 'symbol'}}</div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <div class="total fw-bold">Total: {{ carTotalPrice() |currency:'USD': 'symbol' }}</div>
+  }
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="details">
+  <div class="container">
+    @if (product) {
+      <div class="image">
+        <div class="thumbnail">
+          <img [src]="product.thumbnail" class="grey">
+        </div>
+      </div>
+      <div class="info">
+        <h2>{{product.title}}</h2>
+        <p class="description">{{product.description}}</p>
+        <p class="rating mb-3 pb-3">{{product.rating | rating}}</p>
+        <div class="price">
+          <p class="fw-bold fs-3">{{product.price | discount:product.discountPercentage |currency:'USD': 'symbol' }} | <span class="trough">{{product.price |currency:'USD': 'symbol'}}</span></p>
+          <p class="fw-bold">Discount : {{product.discountPercentage}}%</p>
+        </div>
+        <div class="info">
+          <div class="stock" [ngClass]="product.stock !=0 ? 'in-stock': 'out-stock'">{{product.stock !=0 ? 'In Stock': 'Out Stock'}} </div>
+          <div class="brands mb-4 mt-4">
+            <div class="brand fw-bold">Brand: {{product.brand}}</div>
+          </div>
+          <div class="btns">
+            <button class="btn btn-primary">Add To Cart</button>
+            <button class="btn btn-secondary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <P>product not found</P>
+    }
+  </div>
+</div>

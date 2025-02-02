@@ -1,0 +1,28 @@
+nav .icons a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.cart {
+  position: relative;
+}
+.cart .number{
+  position: absolute;
+  content: "4";
+  width: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 15px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  right: -15px;
+  top: -5px;
+  color: #fff;
+}
+
+.active {
+  color: tomato !important;
+  font-weight: bold;
+}

@@ -1,0 +1,65 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+th {
+  background-color: #ffff;
+}
+
+img {
+  width: 100%;
+  max-width: 150px;
+}
+.product {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.plus {
+  border: none;
+  background-color: green;
+  color: #fff;
+  padding: 5px 10px;
+  width: 30px;
+}
+
+.negative {
+  border: none;
+  padding: 5px 10px;
+  width: 30px;
+}
+
+.quantity {
+  display: flex;
+  gap: 10px;
+}
+
+.number {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  width: 30px;
+  text-align: center;
+}
+
+.delete {
+  color: red;
+  border: none;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+}
+
+.total {
+  padding: 10px;
+  border: 1px solid #eee;
+  width: fit-content;
+  margin-top: 20px;
+  margin-left: auto;
+}

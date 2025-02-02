@@ -1,0 +1,59 @@
+<div class="container">
+  <form
+    class="form"
+    #loginForm="ngForm"
+    (ngSubmit)="handelLoginForm(loginForm)"
+  >
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="mb-2">Email address</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        [(ngModel)]="formValues.email"
+        required
+        pattern="^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com)$"
+        #email="ngModel"
+      />
+      @if(email.invalid && email.touched) {
+        <small id="emailHelp" class="form-text text-danger">
+          @if(email.hasError('required')) {
+            <span>Required</span>
+          }@else if (email.hasError('pattern')) {
+            <span>Please use Valid Email</span>
+          }
+        </small>
+      }
+    </div>
+    <div class="form-group mt-3">
+      <label for="exampleInputPassword1" class="mb-2">Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password"
+        [(ngModel)]="formValues.password"
+        required
+        minlength="8"
+        #password="ngModel"
+      />
+      @if(password.invalid && password.touched) {
+        <small id="passwordhelp" class="form-text text-danger">
+          @if(password.hasError('required')) {
+            <span>Required</span>
+          }@else if (password.hasError('minlength')) {
+            <span>Password must be more than 7 chars</span>
+          }
+        </small>
+      }
+    </div>
+    <button type="submit" class="btn btn-primary mt-4" [disabled]="loginForm.invalid">Login</button>
+  </form>
+  <div class="ask mt-5 text-center fw-bold">
+    <p>Do You Have Account? <a routerLink="/register">Register</a></p>
+  </div>
+</div>

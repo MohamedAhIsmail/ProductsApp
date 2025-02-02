@@ -1,0 +1,20 @@
+.background {
+  background-color: #F5F7F6;
+}
+.stock {
+  position: absolute;
+  content: "";
+  background-color: green;
+  color: #fff;
+  border-radius: 20px;
+  padding: 4px 7px;
+  top: 10px;
+  left: 50px;
+  transform: translateX(-50%);
+}
+
+.out-stock {
+  background-color: red;
+  position: absolute;
+}
+

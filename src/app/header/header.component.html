@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="#">Products App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Products List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/settings" routerLinkActive="active">Settings</a>
+        </li>
+      </ul>
+      <div class="icons d-flex gap-4">
+        <div><a routerLink="/register" class="nav-link" routerLinkActive="active">Register</a></div>
+        <div><a routerLink="/login" class="nav-link" routerLinkActive="active">Login</a></div>
+        <div>
+          <a routerLink="/cart" class="cart" routerLinkActive="active">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <div class="number">{{cartCounter}}</div>
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>
+</nav>
